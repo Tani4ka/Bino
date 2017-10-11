@@ -1,0 +1,12 @@
+/* ---------------------------------------------------------
+                           Font-face
+   ---------------------------------------------------------*/
+
+@include font-face("OpenSansBold", "../fonts/OpenSans/OpenSansBold/opensans-bold-webfont");
+@include font-face("OpenSansRegular", "../fonts/OpenSans/OpenSansRegular/opensans-regular-webfont");
+@include font-face("OpenSansSemiBold", "../fonts/OpenSans/OpenSansSemiBold/opensans-semibold-webfont");
+
+@include font-face("SourceSansProRegular", "../fonts/SourceSansPro/SourseSansProRegular/sourcesanspro-regular-webfont");
+@include font-face("SourceSansProBold", "../fonts/SourceSansPro/SourseSansProBold/sourcesanspro-bold-webfont");
+@include font-face("SourceSansProLight", "../fonts/SourceSansPro/SourseSansProLight/sourcesanspro-light-webfont");
+@include font-face("SourceSansProSemiBold", "../fonts/SourceSansPro/SourseSansProSemiBold/sourcesanspro-semibold-webfont");
