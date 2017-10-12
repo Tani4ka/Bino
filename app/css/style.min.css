@@ -9525,7 +9525,7 @@ xcustom form elements
   display: block;
   clear: both; }
 
-.btn, .btn_light, .top, .advantages__header, .advantages__header::after, .advantages__text, .advantages__icon, .advantages__icon::after, .cd-gallery li::before, .cd-gallery .li-over {
+.btn, .btn_light, .top, .advantages__header, .advantages__header::after, .advantages__text, .advantages__icon, .advantages__icon::after, .cd-gallery li::before, .cd-gallery .li-over, .pricing-card__heading, .pricing-card__price_number {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
@@ -10497,6 +10497,7 @@ header, section, footer {
 /* ---------------------------------------------------------
                             Main
    ---------------------------------------------------------*/
+/* advantages */
 .advantages_wrap {
   padding: 125px 0 79px;
   border-bottom: 1px solid #e4e4e4; }
@@ -10589,6 +10590,7 @@ header, section, footer {
   .advantages:active, .advantages:visited, .advantages:focus {
     color: #9a9a9a; }
 
+/* history */
 .history {
   padding: 140px 0 147px;
   font-family: 'SourceSansProRegular'; }
@@ -10613,6 +10615,7 @@ header, section, footer {
     margin: 12px 0 0;
     padding: 1.25em 3em; }
 
+/* services */
 .services {
   position: relative;
   background: #202020;
@@ -10717,6 +10720,7 @@ header, section, footer {
     width: 2px;
     background: #e74a3d; }
 
+/* works */
 .works {
   padding-top: 127px; }
 
@@ -10878,16 +10882,26 @@ header, section, footer {
         font-size: 14px;
         text-transform: lowercase; }
 
+/* study */
 .study {
   background: #fff;
-  padding: 98px 50px 116px;
+  padding: 98px 15px 116px;
   margin: 46px 0; }
+  @media (min-width: 1024px) {
+    .study {
+      padding: 98px 50px 116px; } }
   .study_wrap {
     padding: 137px 0 149px;
     background: #f4f5f9; }
+    @media (max-width: 639px) {
+      .study_wrap {
+        padding: 137px 0 100px; } }
   .study-bg {
-    margin-top: 62px;
+    margin-top: 35px;
     background: url("../img/room.jpg") no-repeat 72% 50%; }
+    @media (min-width: 640px) {
+      .study-bg {
+        margin-top: 62px; } }
   .study .advantages__header {
     padding: 41px 0 24px;
     margin: 27px 0 25px; }
@@ -10943,6 +10957,136 @@ header, section, footer {
       background: #f4f5f9; }
       .study-slick .slick-dots li:hover, .study-slick .slick-dots li.slick-active {
         background: #e74a3d; }
+
+/* posts */
+.posts {
+  padding: 158px 0 100px;
+  text-align: center;
+  color: #e74a3d; }
+  @media (max-width: 1023px) {
+    .posts {
+      padding: 90px 0 40px; } }
+  .posts.overlay::before {
+    background: rgba(0, 0, 0, 0.5); }
+  .posts-item_wrap {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .posts-item_wrap {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+  .posts-item {
+    position: relative;
+    min-width: 165px;
+    margin-bottom: 25px;
+    padding-top: 162px;
+    color: #fff; }
+    @media (max-width: 1023px) {
+      .posts-item {
+        min-width: 250px;
+        padding-top: 140px; } }
+    .posts-item::before {
+      content: '\f08a';
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+          -ms-transform: translate(-50%);
+              transform: translate(-50%);
+      width: 110px;
+      height: 110px;
+      line-height: 110px;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      border: 1px solid #fff;
+      font-family: 'FontAwesome';
+      font-size: 2.286em; }
+    .posts-item_thumb::before {
+      content: '\f087'; }
+    .posts-item_pen::before {
+      content: '\f040'; }
+    .posts-item_star::before {
+      content: '\f006'; }
+    .posts-item_flag::before {
+      content: '\e806';
+      font-family: 'bino-icon'; }
+    .posts-item__count {
+      font-size: 1.857em;
+      color: #fff;
+      line-height: 0.6em;
+      font-family: 'OpenSansBold'; }
+    .posts-item__text {
+      font-size: 1.143em;
+      padding: 8px 0 12px;
+      letter-spacing: .06em; }
+
+/* pricing */
+.pricing {
+  padding: 150px 0 140px; }
+  .pricing-card {
+    margin: 62px 8px 0;
+    position: relative;
+    background: #f3f4f8;
+    text-align: center; }
+    .pricing-card__heading {
+      padding: 43px 0 129px;
+      margin-bottom: 120px;
+      font-family: 'OpenSansSemiBold';
+      color: #fff;
+      background: #9a9a9a; }
+    .pricing-card__price {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 150px;
+      height: 150px;
+      padding-top: 37px;
+      background: #fff;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      font-size: 0.857em;
+      font-family: 'OpenSansBold';
+      -webkit-box-shadow: 0 0 0 11px rgba(255, 255, 255, 0.31);
+              box-shadow: 0 0 0 11px rgba(255, 255, 255, 0.31); }
+      .pricing-card__price_number {
+        font-size: 3.1em;
+        display: block; }
+    .pricing-card__text {
+      margin: 18px 0;
+      padding: 0 15px;
+      font-family: 'OpenSansSemiBold'; }
+      @media (max-width: 1023px) {
+        .pricing-card__text {
+          margin: 13px 0; } }
+    .pricing-card__btn {
+      margin: 28px 0 52px;
+      padding: 1.2em 2.7em;
+      font-family: 'OpenSansRegular';
+      font-size: 12px;
+      background: #9a9a9a; }
+    .pricing-card:hover .pricing-card__heading {
+      background: #e74a3d; }
+    .pricing-card:hover .pricing-card__price_number {
+      color: #e74a3d; }
+    .pricing-card:hover .pricing-card__btn {
+      background: #e74a3d; }
+      .pricing-card:hover .pricing-card__btn:hover {
+        background: #ed746a; }
 
 /* ---------------------------------------------------------
                             Footer

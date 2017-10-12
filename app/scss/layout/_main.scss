@@ -2,7 +2,7 @@
                             Main
    ---------------------------------------------------------*/
 
-// advantages section
+/* advantages */
 .advantages_wrap {
   padding: 125px 0 79px;
   border-bottom: 1px solid #e4e4e4;
@@ -122,7 +122,7 @@
   }
 }
 
- // history section
+ /* history */
 .history {
   padding: 140px 0 147px;
   font-family: 'SourceSansProRegular';
@@ -157,7 +157,7 @@
 }
 
 
-// services section
+/* services */
 .services {
   position: relative;
   background: $light-black;
@@ -288,7 +288,7 @@
 }
 
 
-// works section
+/* works */
 .works {
   padding-top: 127px;
 }
@@ -484,20 +484,32 @@
 }
 
 
-// study section
+/* study */
 .study {
   background: $white;
-  padding: 98px 50px 116px;
+  padding: 98px 15px 116px;
   margin: 46px 0;
+
+  @include media(">=1024px") {
+    padding: 98px 50px 116px;
+  }
 
   &_wrap {
     padding: 137px 0 149px;
     background: #f4f5f9;
+
+    @include media("<640px") {
+      padding: 137px 0 100px;
+    }
   }
 
   &-bg {
-    margin-top: 62px;
+    margin-top: 35px;
     background: url("../img/room.jpg") no-repeat 72% 50%;
+
+    @include media(">=640px") {
+      margin-top: 62px;
+    }
   }
 
   .advantages__header {
@@ -579,101 +591,171 @@
 }
 
 
+/* posts */
+.posts {
+  padding: 158px 0 100px;
+  text-align: center;
+  color: $accent;
 
-//.advantages {
-//  display: block;
-//  text-align: center;
-//  margin-bottom: 30px;
-//  color: $light-gray;
-//  font-family: 'SourceSansProLight';
-//
-//  &__header {
-//    position: relative;
-//    margin: 27px 0 13px;
-//    padding: 0 0 14px;
-//    letter-spacing: 0.17em;
-//    @extend %transition;
-//
-//    &::after {
-//      content: '';
-//      position: absolute;
-//      bottom: 0;
-//      left: 50%;
-//      transform: translate(-50%);
-//      width: 41px;
-//      height: 1px;
-//      background: #888888;
-//      @extend %transition;
-//    }
-//  }
-//
-//  &__text {
-//    font-size: 0.8571em;
-//    @extend %transition;
-//    line-height: 1.7;
-//
-//    @include media("<1024px") {
-//      padding: 0 20px;
-//    }
-//    @include media("<640px") {
-//      padding: 0;
-//    }
-//  }
-//
-//  &__icon {
-//    position: relative;
-//    margin: 0 auto;
-//    width: 72px;
-//    height: 72px;
-//    background: url("../img/sunglasses.png") no-repeat center;
-//    @extend %transition;
-//
-//    &::after {
-//      content: '';
-//      position: absolute;
-//      top: 0;
-//      left: 0;
-//      width: inherit;
-//      height: inherit;
-//      border: 1px solid #e4e4e4;
-//      @extend %transition;
-//    }
-//
-//    &_heart {
-//      background: url("../img/heart.png") no-repeat center;
-//    }
-//    &_bulb {
-//      background: url("../img/bulb.png") no-repeat center;
-//    }
-//    &_comments {
-//      background: url("../img/comments.png") no-repeat center;
-//    }
-//  }
-//
-//  &:hover {
-//    .advantages__icon,
-//    .advantages__header {
-//      color: $accent;
-//    }
-//    .advantages__text {
-//      color: $light-gray;
-//    }
-//    .advantages__icon {
-//
-//      &::after {
-//        border: 1px solid $accent;
-//        transform: rotate(45deg);
-//        transform-origin: 50%;
-//      }
-//    }
-//  }
-//
-//  &:active,
-//  &:visited,
-//  &:focus {
-//    color: $light-gray;
-//  }
-//}
+  @include media("<1024px") {
+    padding: 90px 0 40px;
+  }
+
+  &.overlay {
+    &::before {
+      background: rgba(#000, .5);
+    }
+  }
+
+  &-item_wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include media("<1024px") {
+      justify-content: center;
+    }
+  }
+
+  &-item {
+    position: relative;
+    min-width: 165px;
+    margin-bottom: 25px;
+    padding-top: 162px;
+    color: $white;
+
+    @include media("<1024px") {
+      min-width: 250px;
+      padding-top: 140px;
+    }
+
+    &::before {
+      content: '\f08a';
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 110px;
+      height: 110px;
+      line-height: 110px;
+      border-radius: 50%;
+      border: 1px solid $white;
+      font-family: 'FontAwesome';
+      font-size: 2.286em;
+    }
+
+    &_thumb::before {
+      content: '\f087';
+    }
+    &_pen::before {
+      content: '\f040';
+    }
+    &_star::before {
+      content: '\f006';
+    }
+    &_flag::before {
+      content: '\e806';
+      font-family: 'bino-icon';
+    }
+
+    &__count {
+      font-size: 1.857em;
+      color: $white;
+      line-height: 0.6em;
+      font-family: 'OpenSansBold';
+
+    }
+
+    &__text {
+      font-size: 1.143em;
+      padding: 8px 0 12px;
+      letter-spacing: .06em;
+    }
+  }
+}
+
+
+/* pricing */
+.pricing {
+  padding: 150px 0 140px;
+
+  &-card {
+    margin: 62px 8px 0;
+    position: relative;
+    background: #f3f4f8;
+    text-align: center;
+
+    &__heading {
+      padding: 43px 0 129px;
+      margin-bottom: 120px;
+      font-family: 'OpenSansSemiBold';
+      color: $white;
+      background: $light-gray;
+      @extend %transition;
+    }
+
+    &__price {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 150px;
+      padding-top: 37px;
+      background: $white;
+      border-radius: 50%;
+      font-size: 0.857em;
+      font-family: 'OpenSansBold';
+      box-shadow: 0 0 0 11px rgba(255, 255, 255, 0.31);
+
+
+      &_number {
+        font-size: 3.1em;
+        display: block;
+        @extend %transition;
+      }
+    }
+
+    &__text {
+      margin: 18px 0;
+      padding: 0 15px;
+      font-family: 'OpenSansSemiBold';
+
+      @include media("<1024px") {
+        margin: 13px 0;
+      }
+    }
+
+    &__btn {
+      margin: 28px 0 52px;
+      padding: 1.2em 2.7em;
+      font-family: 'OpenSansRegular';
+      font-size: 12px;
+      background: $light-gray;
+    }
+
+    &:hover {
+      .pricing-card__heading {
+        background: $accent;
+      }
+      .pricing-card__price_number {
+        color: $accent;
+      }
+      .pricing-card__btn {
+        background: $accent;
+        &:hover {
+          background: lighten($accent,10%);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
 
 
 
