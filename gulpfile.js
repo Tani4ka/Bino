@@ -34,6 +34,8 @@ gulp.task('js', ['common-js'], function() {
         'app/libs/plugins-scroll/plugins-scroll.js',
 		'app/libs/retina-cover/retina-cover.js',
 		'app/libs/slick/slick.js',
+		'app/libs/content-filter/js/main.js',
+		'app/libs/content-filter/js/jquery.mixitup.min.js',
 
 
 		'app/js/common.min.js', // Всегда в конце

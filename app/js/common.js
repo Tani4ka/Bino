@@ -238,6 +238,19 @@ $(function() {
         slidesToScroll: 1
     });
 
+    $('.services-slider').slick({
+        dots: true,
+        prevArrow: false,
+        nextArrow: false,
+        infinite: true,
+        speed: 300,
+        autoplay: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical: true,
+        verticalSwiping: true
+    });
+
 });
 
 
