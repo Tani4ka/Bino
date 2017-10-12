@@ -9515,7 +9515,7 @@ xcustom form elements
 /* ---------------------------------------------------------
                            Helpers
    ---------------------------------------------------------*/
-.dropdown.menu ul, .services-slider ul.slick-dots, .cd-gallery ul {
+.dropdown.menu ul, .services-slider ul.slick-dots, .cd-gallery ul, .study-slick .slick-dots {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -10877,6 +10877,72 @@ header, section, footer {
         left: 0;
         font-size: 14px;
         text-transform: lowercase; }
+
+.study {
+  background: #fff;
+  padding: 98px 50px 116px;
+  margin: 46px 0; }
+  .study_wrap {
+    padding: 137px 0 149px;
+    background: #f4f5f9; }
+  .study-bg {
+    margin-top: 62px;
+    background: url("../img/room.jpg") no-repeat 72% 50%; }
+  .study .advantages__header {
+    padding: 41px 0 24px;
+    margin: 27px 0 25px; }
+  .study .advantages__text {
+    font-size: 1em;
+    font-family: 'SourceSansProLight'; }
+  .study .advantages__icon_study {
+    width: 90px;
+    height: 90px; }
+    .study .advantages__icon_study::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background: url("../img/bulb-white.png") no-repeat center; }
+  .study .advantages__icon::after {
+    width: 90px;
+    height: 90px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border-color: #e74a3d;
+    background: #e74a3d;
+    z-index: auto; }
+  .study:hover .advantages__header {
+    color: #6c6c6c; }
+  .study__btn {
+    margin-top: 46px;
+    padding: .9em 2.2em; }
+
+.study-slick {
+  position: relative; }
+  .study-slick .slick-slide {
+    outline: none; }
+  .study-slick .slick-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 97px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    font-size: 0; }
+    .study-slick .slick-dots li {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      margin: 0 4px;
+      background: #f4f5f9; }
+      .study-slick .slick-dots li:hover, .study-slick .slick-dots li.slick-active {
+        background: #e74a3d; }
 
 /* ---------------------------------------------------------
                             Footer

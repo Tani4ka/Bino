@@ -484,11 +484,196 @@
 }
 
 
+// study section
+.study {
+  background: $white;
+  padding: 98px 50px 116px;
+  margin: 46px 0;
+
+  &_wrap {
+    padding: 137px 0 149px;
+    background: #f4f5f9;
+  }
+
+  &-bg {
+    margin-top: 62px;
+    background: url("../img/room.jpg") no-repeat 72% 50%;
+  }
+
+  .advantages__header {
+    padding: 41px 0 24px;
+    margin: 27px 0 25px;
+  }
+  .advantages__text {
+    font-size: 1em;
+    font-family: 'SourceSansProLight';
+  }
+  .advantages__icon {
+    &_study {
+      width: 90px;
+      height: 90px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background: url("../img/bulb-white.png") no-repeat center;
+      }
+    }
+
+    &::after {
+      width: 90px;
+      height: 90px;
+      transform: rotate(45deg);
+      border-color: $accent;
+      background: $accent;
+      z-index: auto;
+    }
+  }
+
+  &:hover {
+    .advantages__header {
+      color: $dark-gray;
+    }
+  }
+  &__btn {
+    margin-top: 46px;
+    padding: .9em 2.2em;
+  }
+}
+
+
+.study-slick {
+  position: relative;
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .slick-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 97px;
+    transform: translateX(-50%);
+    font-size: 0;
+    @extend %listreset;
+
+    li {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 0 4px;
+      background: #f4f5f9;
+
+      &:hover,
+      &.slick-active {
+        background: $accent;
+      }
+    }
+  }
+}
 
 
 
-
-
+//.advantages {
+//  display: block;
+//  text-align: center;
+//  margin-bottom: 30px;
+//  color: $light-gray;
+//  font-family: 'SourceSansProLight';
+//
+//  &__header {
+//    position: relative;
+//    margin: 27px 0 13px;
+//    padding: 0 0 14px;
+//    letter-spacing: 0.17em;
+//    @extend %transition;
+//
+//    &::after {
+//      content: '';
+//      position: absolute;
+//      bottom: 0;
+//      left: 50%;
+//      transform: translate(-50%);
+//      width: 41px;
+//      height: 1px;
+//      background: #888888;
+//      @extend %transition;
+//    }
+//  }
+//
+//  &__text {
+//    font-size: 0.8571em;
+//    @extend %transition;
+//    line-height: 1.7;
+//
+//    @include media("<1024px") {
+//      padding: 0 20px;
+//    }
+//    @include media("<640px") {
+//      padding: 0;
+//    }
+//  }
+//
+//  &__icon {
+//    position: relative;
+//    margin: 0 auto;
+//    width: 72px;
+//    height: 72px;
+//    background: url("../img/sunglasses.png") no-repeat center;
+//    @extend %transition;
+//
+//    &::after {
+//      content: '';
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      width: inherit;
+//      height: inherit;
+//      border: 1px solid #e4e4e4;
+//      @extend %transition;
+//    }
+//
+//    &_heart {
+//      background: url("../img/heart.png") no-repeat center;
+//    }
+//    &_bulb {
+//      background: url("../img/bulb.png") no-repeat center;
+//    }
+//    &_comments {
+//      background: url("../img/comments.png") no-repeat center;
+//    }
+//  }
+//
+//  &:hover {
+//    .advantages__icon,
+//    .advantages__header {
+//      color: $accent;
+//    }
+//    .advantages__text {
+//      color: $light-gray;
+//    }
+//    .advantages__icon {
+//
+//      &::after {
+//        border: 1px solid $accent;
+//        transform: rotate(45deg);
+//        transform-origin: 50%;
+//      }
+//    }
+//  }
+//
+//  &:active,
+//  &:visited,
+//  &:focus {
+//    color: $light-gray;
+//  }
+//}
 
 
 

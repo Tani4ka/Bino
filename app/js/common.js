@@ -251,6 +251,16 @@ $(function() {
         verticalSwiping: true
     });
 
+    $('.study-slick').slick({
+        dots: true,
+        prevArrow: false,
+        nextArrow: false,
+        infinite: true,
+        speed: 300,
+        autoplay: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
 
     //function onResize() {
     //    var cdGalleryLi = $('.cd-gallery ul>li');
