@@ -102,6 +102,9 @@
     .advantages__header {
       color: $accent;
     }
+    .advantages__text {
+      color: $light-gray;
+    }
     .advantages__icon {
 
       &::after {
@@ -296,9 +299,9 @@
   box-shadow: none;
   background: transparent;
 
-  //@include media("<tablet") {
-  //  margin: 50px 0 50px;
-  //}
+  @include media("<tablet") {
+     margin: 45px 0 70px;
+   }
 }
 .cd-main-content.is-fixed .cd-tab-filter-wrapper {
   position: static;
@@ -316,6 +319,10 @@
     border-radius: 3px;
   }
 }
+.cd-tab-filter::after {
+  display: none;
+}
+
 .cd-main-content {
   min-height: auto;
 }
@@ -339,7 +346,7 @@
 .cd-tab-filter {
   height: auto;
   text-align: center;
-  
+
   li {
     position: relative;
 
@@ -401,7 +408,7 @@
     width: 100%;
     font-size: 0;
   }
-
+  
   li {
     position: relative;
     margin: 0;
@@ -474,83 +481,7 @@
       }
     }
   }
-
 }
-
-
-
-
-//  .portfolio-galary__header {
-//    font-family: RalewayMedium;
-//    color: $accent;
-//    margin-bottom: 0;
-//    padding: 0 15px 0 30px;
-//
-//
-//    @include media(">=tablet") {
-//      text-align: left;
-//    }
-//
-//    @include media("<tablet") {
-//      padding-left: 0;
-//    }
-//  }
-//
-//  .portfolio-galary__text {
-//    color: #d1d1d1;
-//    margin-bottom: 22px;
-//    padding: 0 30px;
-//
-//    @include media("<tablet") {
-//      padding-left: 0;
-//    }
-//  }
-//
-//  .portfolio-galary__lupa {
-//    position: absolute;
-//    top: 50%;
-//    left: 50%;
-//    margin-top: -21px;
-//    transform: translateX(-50%);
-//    opacity: 0;
-//    @extend %transition;
-//  }
-//
-//  .portfolio-galary__icon {
-//    font-family: waxom-icon;
-//    font-size: 25px;
-//    color: $accent;
-//  }
-//  .portfolio-galary__icon.icon-lupa {
-//    color: $white;
-//    margin-left: 12px;
-//  }
-//
-//  .portfolio-galary__li:hover {
-//    background: $light-black;
-//
-//    .portfolio-galary__img {
-//      &::before {
-//        opacity: .7;
-//      }
-//      &::after {
-//        border-bottom-color: $light-black;
-//      }
-//    }
-//    .portfolio-galary__header {
-//      color: $white;
-//    }
-//    .portfolio-galary__text {
-//      color: $accent;
-//    }
-//    .portfolio-galary__lupa {
-//      opacity: 1;
-//    }
-//  }
-//}
-
-
-
 
 
 

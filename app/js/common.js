@@ -78,27 +78,27 @@ $(function() {
                         /***** Aditional scripts *****/
     /* Equalheight without plug plugin */
 
-    //(function ($) {
-    //    $.fn.equalHeights = function () {
-    //        var $items = $(this);
-    //        function equalize() {
-    //            $items.height('initial');
-    //            var maxH = $items.eq(0).height();
-    //            $items.each(function () {
-    //                maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
-    //            });
-    //            $items.height(maxH);
-    //        }
-    //        equalize();
-    //        $(window).bind('resize', function () {
-    //            equalize();
-    //        });
-    //    };
-    //})(jQuery);
-    //
-    //// call equalHeights
-    //$('.services__header').equalHeights();
-    //$('.services__text').equalHeights();
+    (function ($) {
+        $.fn.equalHeights = function () {
+            var $items = $(this);
+            function equalize() {
+                $items.height('initial');
+                var maxH = $items.eq(0).height();
+                $items.each(function () {
+                    maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
+                });
+                $items.height(maxH);
+            }
+            equalize();
+            $(window).bind('resize', function () {
+                equalize();
+            });
+        };
+    })(jQuery);
+
+    // call equalHeights
+    //$('.cd-gallery ul>li').equalHeights();
+
 
 
     /* Fixed sidebar block */
@@ -250,6 +250,18 @@ $(function() {
         vertical: true,
         verticalSwiping: true
     });
+
+
+    //function onResize() {
+    //    var cdGalleryLi = $('.cd-gallery ul>li');
+    //    var liWidth = cdGalleryLi.outerWidth();
+    //    console.log(cdGalleryLi);
+    //    console.log(liWidth);
+    //    cdGalleryLi.height(liWidth);
+    //}onResize();
+    //window.onresize = function () {
+    //    onResize()
+    //};
 
 });
 

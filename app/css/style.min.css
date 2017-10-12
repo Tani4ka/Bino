@@ -8901,55 +8901,6 @@ a.thumbnail image {
 /* ---------------------------------------------------------
                       Content-filter
    ---------------------------------------------------------*/
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-html {
-  font-size: 62.5%; }
-
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-body {
-  font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
-  color: #331d35;
-  background-color: #e7e7e7; }
-
-a {
-  color: #41307c;
-  text-decoration: none; }
-
-/* -------------------------------- 
-
-Main Components 
-
--------------------------------- */
-.cd-header {
-  position: relative;
-  height: 150px;
-  background-color: #331d35; }
-
-.cd-header h1 {
-  color: #ffffff;
-  line-height: 150px;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 300; }
-
-@media only screen and (min-width: 1170px) {
-  .cd-header {
-    height: 180px; }
-  .cd-header h1 {
-    line-height: 180px; } }
-
 .cd-main-content {
   position: relative;
   min-height: 100vh; }
@@ -10625,6 +10576,8 @@ header, section, footer {
   .advantages:hover .advantages__icon,
   .advantages:hover .advantages__header {
     color: #e74a3d; }
+  .advantages:hover .advantages__text {
+    color: #9a9a9a; }
   .advantages:hover .advantages__icon::after {
     border: 1px solid #e74a3d;
     -webkit-transform: rotate(45deg);
@@ -10772,6 +10725,9 @@ header, section, footer {
   -webkit-box-shadow: none;
           box-shadow: none;
   background: transparent; }
+  @media (max-width: 767px) {
+    .cd-tab-filter-wrapper {
+      margin: 45px 0 70px; } }
 
 .cd-main-content.is-fixed .cd-tab-filter-wrapper {
   position: static; }
@@ -10788,6 +10744,9 @@ header, section, footer {
               box-shadow: 0 0 5px #c0c0c0;
       -webkit-border-radius: 3px;
               border-radius: 3px; } }
+
+.cd-tab-filter::after {
+  display: none; }
 
 .cd-main-content {
   min-height: auto; }
