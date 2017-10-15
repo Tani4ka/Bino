@@ -97,7 +97,8 @@
     }
   }
   
-  &:hover {
+  &:hover,
+  &:focus {
     .advantages__icon,
     .advantages__header {
       color: $accent;
@@ -291,6 +292,10 @@
 /* works */
 .works {
   padding-top: 127px;
+
+  @include media("<1024px") {
+    padding-top: 97px;
+  }
 }
 
 // change content-filter plugin
@@ -381,12 +386,14 @@
       border-bottom: 1px solid #ebebeb;
       border-radius: 3px;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: rgba(0, 0, 0, 0.1);
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $accent;
       font-size: 1em;
     }
@@ -434,10 +441,12 @@
       opacity: 0;
       @extend %transition;
     }
-    &:hover::before  {
+    &:hover::before,
+    &:focus::before {
       opacity: 1;
     }
-    &:hover .li-over {
+    &:hover .li-over,
+    &:focus .li-over {
       opacity: 1;
     }
   }
@@ -459,7 +468,7 @@
       position: relative;
       padding: 27px 0 28px;
       color: $white;
-      font-size: 24px;
+      font-size: 1.5em;
       letter-spacing: .04em;
 
       &::before {
@@ -476,7 +485,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        font-size: 14px;
+        font-size: 1em;
         text-transform: lowercase;
       }
     }
@@ -490,14 +499,13 @@
   padding: 98px 15px 116px;
   margin: 46px 0;
 
-  @include media(">=1024px") {
-    padding: 98px 50px 116px;
-  }
-
   &_wrap {
     padding: 137px 0 149px;
     background: #f4f5f9;
 
+    @include media("<1024px") {
+      padding: 107px 15px 119px;
+    }
     @include media("<640px") {
       padding: 137px 0 100px;
     }
@@ -547,7 +555,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .advantages__header {
       color: $dark-gray;
     }
@@ -585,6 +594,7 @@
       background: #f4f5f9;
 
       &:hover,
+      &:focus,
       &.slick-active {
         background: $accent;
       }
@@ -702,6 +712,10 @@
 .pricing {
   padding: 150px 0 140px;
 
+  @include media("<1024px") {
+    padding: 120px 0 110px;
+  }
+
   &-card {
     margin: 62px 8px 0;
     position: relative;
@@ -757,7 +771,8 @@
       background: $light-gray;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       .pricing-card__heading {
         background: $accent;
       }
@@ -766,7 +781,8 @@
       }
       .pricing-card__btn {
         background: $accent;
-        &:hover {
+        &:hover,
+        &:focus {
           background: lighten($accent,10%);
         }
       }
@@ -926,6 +942,7 @@
   }
   &-last {
     //align-self: flex-start;
+    margin-top: -80px;
 
     @include media(">=1200px") {
       margin-top: -35px;
@@ -1063,13 +1080,23 @@
 
 
 /* brands */
+.large_5 {
+  @include media(">=1024px") {
+    max-width: 20%;
+  }
+}
 .brands_mg {
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 }
 
 .brands {
-  padding: 137px 0 140px;
+  padding: 137px 0 111px;
   background: $light;
+  border-bottom: 1px solid #d8d9db;
+
+  @include media("<1024px") {
+    padding: 107px 0 80px;
+  }
 
   &-heading {
     margin-bottom: 65px;
@@ -1080,6 +1107,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 100px;
+
+    background: $white;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
 
     &::before {
       content: '';
@@ -1088,36 +1119,225 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background: rgba(231, 74, 61, 0.1);
+      z-index: 1;
+      padding: 15px;
+      background-size: contain;
+      background-origin: content-box;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &_1::before {
+      background-image: url("../img/brands/brand-gray_1.png");
+    }
+    &_2::before {
+      background-image: url("../img/brands/brand-gray_2.png");
+    }
+    &_3::before {
+      background-image: url("../img/brands/brand-gray_3.png");
+    }
+    &_4::before {
+      background-image: url("../img/brands/brand-gray_4.png");
+    }
+    &_5::before {
+      background-image: url("../img/brands/brand-gray_5.png");
+    }
+    &_6::before {
+      background-image: url("../img/brands/brand-gray_6.png");
+    }
+    &_7::before {
+      background-image: url("../img/brands/brand-gray_7.png");
+    }
+    &_8::before {
+      background-image: url("../img/brands/brand-gray_8.png");
+    }
+    &_9::before {
+      background-image: url("../img/brands/brand-gray_9.png");
+    }
+    &_10::before {
+      background-image: url("../img/brands/brand-gray_10.png");
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(231, 74, 61, 1);
       opacity: 0;
+      box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.4);
+    }
+    &:hover,
+    &:focus {
+
+      &::after {
+        opacity: 1;
+      }
+      &::before {
+        padding: 15px;
+        background-size: contain;
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+  &__link_1:hover,
+  &__link_1:focus {
+    &::before {
+      background-image: url("../img/brands/brand-white_1.png");
+    }
+  }
+  &__link_7:hover,
+  &__link_7:focus {
+    &::before {
+      background-image: url("../img/brands/brand-white_7.png");
+    }
+  }
+
+
+  //&__link {
+  //  display: flex;
+  //  justify-content: center;
+  //  align-items: center;
+  //  position: relative;
+
+    //&::before {
+    //  content: '';
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  bottom: 0;
+    //  right: 0;
+    //  background: rgba(231, 74, 61, 0.1);
+    //  opacity: 0;
+    //}
+    //&:hover {
+    //  &::before {
+    //    opacity: 1;
+    //  }
+    //}
+  //}
+  //&__logo {
+  //  box-shadow: 1px 2px 5px rgba(57, 57, 57, 0.1);
+  //  max-width: 100%;
+  //  height: auto;
+  //}
+}
+
+/* blog */
+
+.blog-full {
+  min-width: 100%;
+}
+.blog {
+  padding: 137px 0 0;
+  background: $light;
+
+  @include media("<1024px") {
+    padding: 117px 0 0;
+  }
+
+  .heading {
+    margin-bottom: 63px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    @include media("<640px") {
+      flex-direction: column-reverse;
     }
 
-    &:hover {
-      &::before {
-        opacity: 1;
+    &_reverse {
+      @include media(">=1024px") {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &:nth-child(even) {
+      @include media("<1024px", ">=640px") {
+        flex-direction: row-reverse;
       }
     }
   }
 
-  &__logo {
-    //margin-bottom: 30px;
-    box-shadow: 1px 2px 5px rgba(57, 57, 57, 0.1);
-    max-width: 100%;
-    height: auto;
+  &__image {
+    display: block;
+    background-color: $light-gray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
-    &:hover {
+    @include media(">=640px") {
+      flex: 0 0 50%;
+    }
+    @include media("<640px") {
+      height: 400px;
+    }
+  }
 
+  &__content {
+    padding: 70px 50px;
+    background: $accent;
+    color: $white;
+    font-size: 16px;
+
+    @include media(">=640px") {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    padding: 40px 0 20px;
+    margin-bottom: 45px;
+    color: $white;
+    font-size: 1.5em;
+    letter-spacing: .04em;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 44px;
+      height: 4px;
+      background: $white;
+    }
+    &::after {
+      content: 'art / t-shirt';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1em;
+      text-transform: lowercase;
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin-top: 50px;
+    display: block;
+    color: $white;
+    font-size: 18px;
+
+    &::after {
+      content: '\f101';
+      position: absolute;
+      top: 2px;
+      left: 100px;
+      font-family: 'FontAwesome';
+    }
+
+    &:hover,
+    &:focus {
+      color: $white;
+      text-shadow: 0.5px 0 2px rgba(255, 255, 255, 0.6);
     }
   }
 }
-
-.large_5 {
-  @include media(">=1024px") {
-    max-width: 20%;
-  }
-}
-
-
 
 
 
