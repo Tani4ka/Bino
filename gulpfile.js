@@ -11,8 +11,10 @@ var gulp           = require('gulp'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify"),
+		notify         = require('gulp-notify'),
+		htmlmin 	   = require('gulp-html-minifier'),
 		rsync          = require('gulp-rsync');
+
 
 // Скрипты проекта
 
@@ -36,7 +38,6 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/slick/slick.js',
 		'app/libs/content-filter/js/main.js',
 		'app/libs/content-filter/js/jquery.mixitup.min.js',
-
 
 		'app/js/common.min.js', // Всегда в конце
 		])
@@ -62,7 +63,7 @@ gulp.task('sass', function() {
 	.pipe(sass({'bundleExec': true}).on("error", notify.onError()))    //  // sass({outputStyle: 'expand'})
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
-	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
+	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -73,16 +74,22 @@ gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 	gulp.watch('app/*.html', browserSync.reload);
 });
 
+gulp.task('minify', function() {
+	gulp.src('app/*.html')
+	.pipe(htmlmin({collapseWhitespace: true}))
+	.pipe(gulp.dest('dist'));
+});
+
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
 	.pipe(cache(imagemin()))    // tiny png - сжимает лучьше, но оставляет артифакты (на 3% болюше в pagespeed insights)
 	.pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'sass', 'js', 'minify'], function() {
 
 	var buildFiles = gulp.src([
-		'app/*.html',
+		//'app/*.html',
 		'app/.htaccess',
 		]).pipe(gulp.dest('dist'));
 
@@ -115,7 +122,7 @@ gulp.task('deploy', function() {
 	'dist/.htaccess',  // .htaccess - для работы с сервером, для кеширования
 	];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/public_html/S-Mitler'));  // change name of progect folder
+	.pipe(conn.dest('/public_html/Bino_1'));  // change name of progect folder
 
 });
 
