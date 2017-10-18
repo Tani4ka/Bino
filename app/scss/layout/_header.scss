@@ -76,7 +76,7 @@
     border: none;
     right: auto;
     left: 100%;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(106, 106, 106, 0.35);
   }
   .first-sub {
     border-top: 1px solid $accent;
@@ -84,7 +84,7 @@
   }
   .main-submenu li,
   .is-dropdown-submenu li {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid rgba(106, 106, 106, 0.35);
   }
   &.align-right .is-dropdown-submenu.first-sub {
     top: 98%;
@@ -96,6 +96,9 @@
   }
   &.menu  li {
       padding-left: 20px;
+    &:focus {
+      outline: none;
+    }
   }
   &.menu > li {
     background: transparent;

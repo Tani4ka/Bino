@@ -33,6 +33,7 @@
   margin-bottom: 30px;
   color: $light-gray;
   font-family: 'SourceSansProLight';
+  text-decoration: none;
 
   &__header {
     position: relative;
@@ -381,6 +382,7 @@
     line-height: normal;
     font-size: 1em;
     font-family: 'OpenSansSemiBold';
+    text-decoration: none;
 
     @include media("<tablet") {
       border-bottom: 1px solid #ebebeb;
@@ -462,6 +464,8 @@
     display: flex;
     align-items: flex-end;
     font-family: 'SourceSansProSemiBold';
+    font-size: 14px;
+    text-decoration: none;
     @extend %transition;
 
     &__text {
@@ -571,10 +575,19 @@
 .study-slick {
   position: relative;
 
+  @include media("<1024px") {
+    .slick-list {
+      background: $white;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+    }
+  }
 
   .slick-slide {
     outline: none;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+
+    @include media(">=1024px") {
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+    }
   }
 
   .slick-dots {
@@ -710,7 +723,7 @@
 
 /* pricing */
 .pricing {
-  padding: 150px 0 140px;
+  padding: 143px 0 140px;
 
   @include media("<1024px") {
     padding: 120px 0 110px;
@@ -754,7 +767,7 @@
     }
 
     &__text {
-      margin: 18px 0;
+      margin: 21px 0;
       padding: 0 15px;
       font-family: 'OpenSansSemiBold';
 
@@ -764,7 +777,7 @@
     }
 
     &__btn {
-      margin: 28px 0 52px;
+      margin: 27px 0 52px;
       padding: 1.2em 2.7em;
       font-family: 'OpenSansRegular';
       font-size: 12px;
@@ -1099,7 +1112,11 @@
   }
 
   &-heading {
-    margin-bottom: 65px;
+    margin-bottom: 62px;
+  }
+
+  .heading__header {
+    letter-spacing: normal;
   }
 
   &__link {
@@ -1343,6 +1360,7 @@
     color: $white;
     font-size: 18px;
     font-family: 'OpenSansSemiBoldItalic';
+    text-decoration: none;
 
     &::after {
       content: '\f101';
@@ -1382,7 +1400,7 @@
 }
 .contacts,
 .message {
-  padding: 91px 90px 35px;
+  padding: 91px 90px 93px;
   height: 100%;
   display: block;
   border-radius: 3.5px;
@@ -1390,7 +1408,7 @@
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 
   @include media("<1024px") {
-    padding: 60px 35px 25px;
+    padding: 60px 35px 63px;
   }
 }
 .message {
@@ -1436,16 +1454,32 @@
     font-family: 'SourceSansProSemiBold';
     color: $accent;
     margin-bottom: 14px;
-  }
-  
-  &__text {
-    padding-bottom: 58px;
-    font-size: 1.286em;
-    line-height: 1.4em;
+    margin-top: 58px;
 
     @include media("<1024px") {
-      padding-bottom: 45px;
+      margin-top: 45px;
     }
+
+    &_first {
+      margin-top: 0;
+    }
+  }
+
+
+  &__text {
+    //padding-bottom: 58px;
+    font-size: 1.286em;
+    line-height: 1.4em;
+    display: block;
+    text-decoration: none;
+
+
+    
+      &:hover,
+      &:focus {
+        color: $gray;
+
+      }
   }
 }
 
@@ -1454,9 +1488,11 @@ input.message__input:focus,
 textarea.message__textarea,
 textarea.message__textarea:focus {
   margin-bottom: 23px;
-  padding: 0 0 10px;
+  padding: 6px 0 16px;
   border: none;
   border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  outline: none;
   box-shadow: none;
   color: $light-gray;
   font-family: 'OpenSansSemiBold';
@@ -1486,6 +1522,10 @@ textarea.message__textarea:focus {
 .start {
   padding: 137px 0 138px;
 
+  @include media("<1024px") {
+    padding: 107px 0 108px;
+  }
+
   .overlay:before {
     background: rgba(#000, .6);
   }
@@ -1503,7 +1543,7 @@ textarea.message__textarea:focus {
     &__text {
       color: $white;
       font-size: 1.286em;
-      margin: 3px 0 66px;
+      margin: 3px 0 64px;
     }
     &__decor {
       display: none;

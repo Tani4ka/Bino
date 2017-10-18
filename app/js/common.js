@@ -1,13 +1,13 @@
 $(document).ready(function() {
                              /**** Common scripts ****/
 
+    /* page scroll to top */
+    $(this).scrollTop(0);
+
     /* Preloader */
     $(window).on('load', function () {
         $('.preloader').delay(1000).fadeOut('slow');
     });
-
-    /* page scroll to top */
-    $(this).scrollTop(0);
 
     /* Foundation */
     $(document).foundation();

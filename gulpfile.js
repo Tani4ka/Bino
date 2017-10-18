@@ -29,8 +29,10 @@ gulp.task('common-js', function() {
 
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
-		'app/libs/foundation/js/vendor/jquery.js',
-		'app/libs/foundation/js/vendor/foundation.min.js',
+		//'app/libs/foundation/js/vendor/jquery.js',
+		//'app/libs/foundation/js/vendor/foundation.min.js',
+		'app/libs/foundation-6.4.2/js/vendor/jquery.js',
+		'app/libs/foundation-6.4.2/js/vendor/foundation.min.js',
 		//'app/libs/jquery/jquery.min.js',
 		//'app/libs/modernizr/modernizr.js',
         'app/libs/plugins-scroll/plugins-scroll.js',
@@ -122,7 +124,7 @@ gulp.task('deploy', function() {
 	'dist/.htaccess',  // .htaccess - для работы с сервером, для кеширования
 	];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/public_html/Bino_1'));  // change name of progect folder
+	.pipe(conn.dest('/public_html/Binoy'));  // change name of progect folder
 
 });
 
