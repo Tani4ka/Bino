@@ -4,10 +4,6 @@ $(document).ready(function() {
     /* page scroll to top */
     $(this).scrollTop(0);
 
-    /* Preloader */
-    $(window).on('load', function () {
-        $('.preloader').delay(1000).fadeOut('slow');
-    });
 
     /* Foundation */
     $(document).foundation();
