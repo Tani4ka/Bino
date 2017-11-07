@@ -1,6 +1,7 @@
 /node_modules/
 /dist/
 /**/*.psd
+/**/*.sketch
 /.git/
 /.idea/**/
 /**/Thumbs.db
