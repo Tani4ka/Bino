@@ -35,7 +35,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/foundation-6.4.2/js/vendor/foundation.min.js',
 		//'app/libs/jquery/jquery.min.js',
 		//'app/libs/modernizr/modernizr.js',
-        'app/libs/plugins-scroll/plugins-scroll.js',
+		'app/libs/plugins-scroll/plugins-scroll.js',
 		'app/libs/retina-cover/retina-cover.js',
 		'app/libs/slick/slick.js',
 		'app/libs/content-filter/js/main.js',
@@ -113,7 +113,7 @@ gulp.task('deploy', function() {
 	var conn = ftp.create({
 		host:      'webdevgranchenko.esy.es',
 		user:      'u715394280',
-		password:  'dAf0yfAAsm8e',
+		password:  'c8cZyXY40BUA',
 		parallel:  10,
 		log: gutil.log
 	});
@@ -123,7 +123,7 @@ gulp.task('deploy', function() {
 	'dist/.htaccess',  // .htaccess - для работы с сервером, для кеширования
 	];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/public_html/Bino'));  // change name of progect folder
+	.pipe(conn.dest('/public_html/Binno'));  // change name of progect folder
 
 });
 
